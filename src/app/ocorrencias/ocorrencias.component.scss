@@ -1,0 +1,14 @@
+
+.container {
+    flex-wrap: wrap;
+
+    .inner-nav {
+      width: -moz-available;
+      width: -webkit-fill-available;
+        height: 50px;
+        border-radius: 3px;
+        background-color: #dddddd;
+      }
+}
+
+
