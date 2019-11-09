@@ -1,5 +1,30 @@
 <div class="vaccine-card">
-  <div class="title-vaccine">Titulo da vacina</div>
-  <div class="body-vaccine">Detalhes da Vacina</div>
-  <div class="footer-vaccine">Data da Vacina</div>
+  <div class="title-vaccine">
+    {{vaccine.title}}
+  </div>
+  <div class="body-vaccine">
+    <div class="internal-body-vaccine">
+      <!-- <div class="internal-body-vaccine-content-details" *ngFor="let item of vaccine.detail">      -->
+      <div class="internal-body-vaccine-content-details"*ngFor="let item of vaccine.detail">
+        
+          <h3>Dose: {{item.dose}}</h3>
+          <p>Lote</p>
+          <p>{{item.lot}}</p>
+          <p>Validade</p>
+          <p>{{item.validity}}</p>
+          <p>Data</p>
+          <p>{{vaccine.date}}</p>
+        
+      </div>
+      <!-- <div class="internal-body-vaccine-content-description"> -->
+
+    </div>
+  </div>
+  <div class="footer-vaccine">
+      <div class="internal-body-vaccine-content-details" >
+          <p>Descrição</p>
+          <p>{{vaccine.description}}</p>
+        </div>
+     
+  </div>
 </div>

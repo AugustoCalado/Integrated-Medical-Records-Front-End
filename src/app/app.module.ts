@@ -1,15 +1,17 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
+import { CardComponent } from './vacinacao/card/card.component';
+import { EmergenciaComponent } from './emergencia/emergencia.component';
 import { HomeComponent } from './home/home.component';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
+import { OcorrenciasComponent } from './ocorrencias/ocorrencias.component';
 import { VacinacaoComponent } from './vacinacao/vacinacao.component';
 
 import { RouterModule, Routes } from '@angular/router';
-import { EmergenciaComponent } from './emergencia/emergencia.component';
-import { OcorrenciasComponent } from './ocorrencias/ocorrencias.component';
-import { CardComponent } from './vacinacao/card/card.component';
+
 
 const appRoutes: Routes = [
   // { path: '', redirectTo:'/vacinacao', pathMatch:'full'},
@@ -32,6 +34,7 @@ const appRoutes: Routes = [
   imports: [
     BrowserModule,
     RouterModule.forRoot(appRoutes),
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
