@@ -1,9 +1,9 @@
 <app-nav-bar></app-nav-bar>
 
 <div class="container">
-  
+
   <div *ngFor="let item of vaccines">
-      <app-card [vaccine]="item"></app-card>
+    <app-vaccine-card [vaccine]="item"></app-vaccine-card>
   </div>
 
 </div>

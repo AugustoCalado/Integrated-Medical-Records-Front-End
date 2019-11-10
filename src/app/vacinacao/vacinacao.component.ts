@@ -28,7 +28,7 @@ export class VacinacaoComponent implements OnInit {
       { title: 'vacina 4', detail: [{ dose: '1', lot: '12345678', validity: '29/10/2019' }], date: '31/10/2019' },
 
     ]
-    console.log("---- todas ---- ")
+    console.log("---- todas as vacinas---- ")
     console.log(this.vaccines)
   }
 

@@ -1,8 +1,9 @@
 <app-nav-bar></app-nav-bar>
+
 <div class="container">
-  <div class="inner-nav">
-    <a>Resumo</a>
-    <a>Resumo</a>
-  </div>
+    
+    <div *ngFor="let item of occurrences">
+        <app-occurrence-card [occurrence]="item"></app-occurrence-card>
+    </div>
  
 </div>

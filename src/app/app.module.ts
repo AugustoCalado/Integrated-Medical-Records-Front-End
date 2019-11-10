@@ -3,11 +3,12 @@ import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
-import { CardComponent } from './vacinacao/card/card.component';
+import { VaccineCardComponent } from './vacinacao/card/vaccine-card.component';
 import { EmergenciaComponent } from './emergencia/emergencia.component';
 import { HomeComponent } from './home/home.component';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { OcorrenciasComponent } from './ocorrencias/ocorrencias.component';
+import { OccurrenceCardComponent } from './ocorrencias/card/occurrence-card.component';
 import { VacinacaoComponent } from './vacinacao/vacinacao.component';
 
 import { RouterModule, Routes } from '@angular/router';
@@ -29,7 +30,8 @@ const appRoutes: Routes = [
     VacinacaoComponent,
     EmergenciaComponent,
     OcorrenciasComponent,
-    CardComponent
+    VaccineCardComponent,
+    OccurrenceCardComponent
   ],
   imports: [
     BrowserModule,

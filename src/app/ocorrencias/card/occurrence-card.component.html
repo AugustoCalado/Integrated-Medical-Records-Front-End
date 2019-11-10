@@ -1,0 +1,30 @@
+<div class="occurence">
+    <div class="occurrence-card">
+        <div class="occurence-infos" (click)=activedSide()>
+          <div class="occurrence-date">
+            <p>{{occurrence.medicalRecordDate[1]}}</p>
+            <p>{{occurrence.medicalRecordDate[2]}}</p>
+            <p>{{occurrence.medicalRecordDate[0]}}</p>
+          </div>
+          <div class="occurrence-resume">
+            <div class="occurrence-resume-internal" >
+              <label>Lugar de atendimento</label>
+              <input type="text" placeholder={{occurrence.medicalRecordPlace}}>
+              <label>Reclamação principal</label>
+              <input type="text" placeholder={{occurrence.mainComplain}}>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div *ngIf="isActive" class="occurrence-detail">
+          <label>CRM</label>
+          <input type="text" placeholder={{occurrence.crm}}>
+          <label>Detalhes da reclamação</label>
+          <input type="text" placeholder={{occurrence.currentDiseaseInfo}}>
+          <label>Diagnóstico</label>
+          <input type="text" placeholder={{occurrence.diagnostic}}>
+          <label>Prescrição</label>
+          <input type="text" placeholder={{occurrence.prescription}}>
+      </div>
+
+</div>
