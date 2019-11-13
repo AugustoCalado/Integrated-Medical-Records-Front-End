@@ -11,21 +11,8 @@ export class VaccineCardComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    console.log("------ vaccine no card ------")
+    console.log(this.vaccine)
   }
 
 }
-
-
-
-
-  // title: "vacina 1", 
-  // detail: (1) […], 
-
-//   dose: "1"
-// ​​​
-// lot: "12345678"
-// ​​​
-// validity: "29/10/2019"
-  // date: "31/10/2019" 
-
-  
