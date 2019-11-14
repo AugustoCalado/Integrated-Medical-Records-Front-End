@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { OccurrenceService } from '../../services/occurrence.service'
+import { map } from 'rxjs/operators';
 
 @Component({
   selector: 'app-ocorrencias',
@@ -13,35 +14,57 @@ export class OcorrenciasComponent implements OnInit {
   occurrences: any;
 
   ngOnInit() {
-    this.occurrences = [
-      {
-        idMedicalRecord: 1,
-        crm: "123456",
-        mainComplain: "Dores na região das costas",
-        currentDiseaseInfo: "Fortes dores nas costas ao permanecer sentado ou em pé",
-        diagnostic: "Mal jeito na região lombar",
-        prescription: "Paracetamol de 8 em 8h",
-        medicalRecordDate: [2015,8,11],
-        medicalRecordPlace: "AMA São Miguel Paulista",
-        medicalExam: [],
-        physicalExam: []
-      },
-      {
-        idMedicalRecord: 1,
-        crm: "123456",
-        mainComplain: "Dores na região das costas",
-        currentDiseaseInfo: "Fortes dores nas costas ao permanecer sentado ou em pé",
-        diagnostic: "Mal jeito na região lombar",
-        prescription: "Paracetamol de 8 em 8h",
-        medicalRecordDate: [2015,8,11],
-        medicalRecordPlace: "AMA São Miguel Paulista",
-        medicalExam: [],
-        physicalExam: []
-      }
-    ]
+    this.recoverOccurences()
 
     console.log("---- todas as ocorrencias ---- ")
     console.log(this.occurrences)
   }
 
+
+  recoverOccurences() {
+    this.occurrenceService.getAllInfo().subscribe(response => {
+      
+      console.log("---- dentro do response ---- ")
+      console.log(response)
+      let occ = response.map(current =>{
+        console.log(current.medicalRecordDate)
+        let newDateFormat = current.medicalRecordDate.split("::")
+        current.medicalRecordDate = [newDateFormat[0],newDateFormat[1],newDateFormat[2]]
+        return current
+      })
+
+      this.occurrences = occ
+      return occ
+
+    })
+
+  }
 }
+
+
+// this.occurrences = [
+//   {
+//     idMedicalRecord: 1,
+//     crm: "123456",
+//     mainComplain: "Dores na região das costas",
+//     currentDiseaseInfo: "Fortes dores nas costas ao permanecer sentado ou em pé",
+//     diagnostic: "Mal jeito na região lombar",
+//     prescription: "Paracetamol de 8 em 8h",
+//     medicalRecordDate: [2015,8,11],
+//     medicalRecordPlace: "AMA São Miguel Paulista",
+//     medicalExam: [],
+//     physicalExam: []
+//   },
+//   {
+//     idMedicalRecord: 1,
+//     crm: "123456",
+//     mainComplain: "Dores na região das costas",
+//     currentDiseaseInfo: "Fortes dores nas costas ao permanecer sentado ou em pé",
+//     diagnostic: "Mal jeito na região lombar",
+//     prescription: "Paracetamol de 8 em 8h",
+//     medicalRecordDate: [2015,8,11],
+//     medicalRecordPlace: "AMA São Miguel Paulista",
+//     medicalExam: [],
+//     physicalExam: []
+//   }
+// ]

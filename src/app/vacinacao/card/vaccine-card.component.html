@@ -1,13 +1,13 @@
-<div class="vaccine-card">
+<div *ngIf="newVaccine" class="vaccine-card">
   <div class="title-vaccine">
-    {{vaccine[0].vaccine.name}}
+    {{newVaccine[0].vaccine.name}}
   </div>
   <div class="body-vaccine">
     <div class="internal-body-vaccine">
       <!-- <div class="internal-body-vaccine-content-details" *ngFor="let item of vaccine.detail">      -->
-      <div class="internal-body-vaccine-content-details" *ngFor="let item of vaccine; let i = index">
+      <div class="internal-body-vaccine-content-details" *ngFor="let item of newVaccine; let i = index">
         
-          <h3>Dose: {{i+1}}</h3>
+          <h3>{{i+1}}a Dose</h3>
           <p>Lote</p>
           <p>{{item.vaccineLot}}</p>
           <p>Validade</p>
@@ -23,7 +23,7 @@
   <div class="footer-vaccine">
       <div class="internal-body-vaccine-content-details" >
           <p>Descrição</p>
-          <p>{{vaccine[0].vaccine.description}}</p>
+          <p>{{newVaccine[0].vaccine.description}}</p>
         </div>
      
   </div>

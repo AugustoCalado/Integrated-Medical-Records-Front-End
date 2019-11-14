@@ -16,9 +16,8 @@ export class VacinacaoComponent implements OnInit {
 
 
   ngOnInit() {
-    this.vaccines = this.recoverVaccines()
-    console.log("---- todas as vacinas---- ")
-    console.log(this.vaccines)
+    this.recoverVaccines()
+
     // [
     //   {
     //     title: 'vacina 1',
@@ -39,15 +38,23 @@ export class VacinacaoComponent implements OnInit {
   }
 
   recoverVaccines() {
-    const vac = this.vaccineService.getAllInfo()
- 
-      let goruppedVaccines = _.groupBy(vac, item => item.vaccine.name)
+    const vac = this.vaccineService.getAllInfo().subscribe(response => {
+
+
+      let goruppedVaccines = _.groupBy(response, item => item.vaccine.name)
       let keys = Object.keys(goruppedVaccines)
       let responseArray = keys.map(current =>{
+       
+        // goruppedVaccines[current]
         return goruppedVaccines[current]
       })
-     
+      
+      this.vaccines = responseArray
       return responseArray
+
+    })
+ 
+    
 
     
 
