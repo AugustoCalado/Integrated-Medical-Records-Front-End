@@ -12,30 +12,36 @@
         .occurence-infos {
             display: flex;  
             .occurrence-date {
+                border-radius: 30px;
                 background-color: #777777;
-                height: 170px;
-                width: 170px;
+                height: 150px;
+                width: 150px;
                 margin-top: 16px;
                 margin-left: 21px;
                 margin-right: 107px;
                 color: white;
     
-                // p{
-                //     margin: 0;
-                // }
+                p:nth-of-type(2n) {
+                    margin-left: 10px;
+                    margin-bottom: 40px;
+                    font-size: 15px;
+                    
+                }
 
                 p:first-of-type {
-                    font-size: 25px;
+                    font-size: 40px;
                     font-weight: 500;
                     font-stretch: normal;
                     font-style: normal;
                     line-height: 1.24;
-                    margin: 0 auto;
+                    margin: 40px 30px 0px 55px;
                 }
             }
     
             .occurrence-resume {
-                .occurrence-resume-internal {}
+                .occurrence-resume-internal {
+                    // display: flex;
+                }
     
                 // background-color: blue;
                 // width: ;
@@ -44,8 +50,36 @@
     }
 
     .occurence-detail{
-        width: 483px;
-        height: 462px;
-        background-color: green;
+        display: grid;
+        .occurrence-detail-row{ 
+            display: grid;
+            // input{
+            //     width: 321px;
+            // }
+            // label {
+            //     width: 321px;
+            // }
+            
+
+        }
+        // width: 483px;
+        // height: 462px;
+        // background-color: green;
+       
     }
 }
+
+label{
+    margin-bottom: 50px;
+}
+
+textarea { 
+    min-height: 21.5px;
+    max-height: 42.5px;
+    display: grid;
+    width: 321px;
+    color:black;
+    overflow:hidden; 
+    resize:none;
+}
+

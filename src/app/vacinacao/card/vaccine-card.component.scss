@@ -4,8 +4,9 @@
     margin-right: 30px;
 
     .title-vaccine {
-
+        line-height: 43px;
         height: 43px;
+        font-weight: 800;
         border: solid 1px #dddddd;
         background-color: #eceeef;
     }
@@ -52,7 +53,7 @@
 
     .footer-vaccine {
         min-height: 43px;
-        max-height: 60px;
+        max-height: 60px;            
         border: solid 1px #dddddd;
         .internal-body-vaccine-content-details {
             p:nth-of-type(2n+1) {
