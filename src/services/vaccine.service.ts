@@ -25,13 +25,13 @@ export class VaccineService {
   getAllInfo() {
     return this.http.get(
       this.url + '/patient-immunization/patient-immunization/all?cpf=42367438123',
-      {headers: this.httpOptions.headers}
+      { headers: this.httpOptions.headers }
     ).pipe(
-      map(response => { 
-   
-    console.log('service resposnse', response)
-    return response;
-    })
+      map(response => {
+
+        console.log('service response', response)
+        return response;
+      })
     );
 
   }

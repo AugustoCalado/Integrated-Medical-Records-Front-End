@@ -1,6 +1,104 @@
 <app-nav-bar></app-nav-bar>
-<div class="content">
-  <p>
-    emergencia works!
-  </p>
+<div class="emergency">
+  <div class="emergency-card">
+    <div class="emergency-resume">
+      <div *ngIf="emergency && isBlocked" class="emergency-resume-internal">
+        <div class="card">
+          <h1>Carteira de emergência</h1>
+        </div>
+
+        <button (click)="activateLabel()" class="button-edit">Editar informações</button>
+
+        <div>
+          <p>Nome Completo</p>
+          <textarea type="text" value="" disabled="disabled" wrap="soft" rows="1" cols="70"
+            background="transparent">Maria das Dores</textarea>
+        </div>
+        <div>
+          <p>Endereço</p>
+          <textarea type="text" value=" " disabled="disabled" wrap="soft" rows="1"
+            cols="70">Rua dos Cafezais, 41</textarea>
+        </div>
+
+        <div class="label-together">
+          <div>
+            <p>Tipo sanguineo</p>
+            <textarea type="text" value=" " disabled="disabled" wrap="soft" rows="1" cols="30">A+</textarea>
+          </div>
+          <div class="distance-left">
+            <p>Doador de Orgãos</p>
+            <textarea type="text" value=" " disabled="disabled" wrap="soft" rows="1" cols="30">Sim</textarea>
+          </div>
+        </div>
+
+        <div>
+          <p>Quadro</p>
+          <textarea type="text" value={{emergency.declaration}} disabled="disabled" wrap="soft" rows="1"
+            cols="70"></textarea>
+        </div>
+        <div>
+          <p>Medicamentos contínuos</p>
+          <textarea type="text" value=" " disabled="disabled" wrap="soft" rows="1"
+            cols="70">Maleato de desclorfeniramina</textarea>
+        </div>
+        <div>
+          <p>Observações médicas</p>
+          <textarea type="text" value={{emergency.observations}} disabled="disabled" wrap="soft" rows="10"
+            cols="70">Tem sensibilidade a alimentos que contenham amendoim em sua composição e é celíaca.</textarea>
+        </div>
+
+      </div>
+
+
+
+
+      <div *ngIf="isActive && emergency" class="emergency-edit">
+        <div class="card">
+          <h1>Carteira de emergência</h1>
+        </div>
+
+        <button (click)="activateLabel()" class="button-edit">Cancelar edição</button>
+
+        <div>
+          <p>Nome Completo</p>
+          <textarea type="text" wrap="soft" rows="1" cols="70">Maria das Dores</textarea>
+        </div>
+        <div>
+          <p>Endereço</p>
+          <textarea type="text" wrap="soft" rows="1" cols="70">Rua dos Cafezais, 41</textarea>
+        </div>
+
+        <div class="label-together">
+          <div>
+            <p>Tipo sanguineo</p>
+            <textarea type="text" wrap="soft" rows="1" cols="30">A+</textarea>
+          </div>
+          <div class="distance-left">
+            <p>Doador de Orgãos</p>
+            <textarea type="text"   wrap="soft" rows="1" cols="30">Sim</textarea>
+          </div>
+        </div>
+
+        <div>
+          <p>Quadro</p>
+          <textarea type="text" value={{emergency.declaration}} wrap="soft" rows="1" cols="70"></textarea>
+        </div>
+        <div>
+          <p>Medicamentos contínuos</p>
+          <textarea type="text" value=" " wrap="soft" rows="1" cols="70">Maleato de desclorfeniramina</textarea>
+        </div>
+        <div>
+          <p>Observações médicas</p>
+          <textarea type="text" value={{emergency.observations}} wrap="soft" rows="10"
+            cols="70">Tem sensibilidade a alimentos que contenham amendoim em sua composição e é celíaca.</textarea>
+        </div>
+
+        <button (click)="activateLabel()" class="saveButton">Salvar informações</button>
+
+      </div>
+
+
+
+    </div>
+  </div>
 </div>

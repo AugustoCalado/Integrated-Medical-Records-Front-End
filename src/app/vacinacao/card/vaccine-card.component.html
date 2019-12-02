@@ -4,7 +4,6 @@
   </div>
   <div class="body-vaccine">
     <div class="internal-body-vaccine">
-      <!-- <div class="internal-body-vaccine-content-details" *ngFor="let item of vaccine.detail">      -->
       <div class="internal-body-vaccine-content-details" *ngFor="let item of newVaccine; let i = index">
         
           <h3>{{i+1}}a Dose</h3>
@@ -16,15 +15,12 @@
           <p>{{item.dataVaccine}}</p>
         
       </div>
-      <!-- <div class="internal-body-vaccine-content-description"> -->
-
     </div>
   </div>
   <div class="footer-vaccine">
       <div class="internal-body-vaccine-content-details" >
           <p>Descrição</p>
           <p>{{newVaccine[0].vaccine.description}}</p>
-        </div>
-     
+        </div>   
   </div>
 </div>
